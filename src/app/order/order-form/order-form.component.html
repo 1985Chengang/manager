@@ -1,0 +1,55 @@
+<div class="white-box">
+  <h3 class="box-title m-b-0">电商/订单/编辑</h3>
+  <p class="text-muted m-b-30 font-13"> 编辑 </p>
+  <div class="row">
+    <div class="col-sm-12 col-xs-12">
+      <!--
+        表单由 angular 接管
+       -->
+      <form [formGroup]="formModel">
+        <div class="form-group">
+          <label for="customer">用户名</label>
+          <div class="input-group">
+            <div class="input-group-addon"><i class="ti-user"></i></div>
+            <input formControlName="customer" type="text" class="form-control" id="customer" placeholder="Username"> </div>
+            <!--value="{{order.customer}}"-->
+        </div>
+        <div class="form-group">
+          <label for="orderCode">订单编号</label>
+          <div class="input-group">
+            <div class="input-group-addon"><i class="ti-shortcode"></i></div>
+            <input formControlName="orderCode" type="text" class="form-control" id="orderCode" placeholder="Order code"> </div>
+            <!--value="{{order.orderCode}}"-->
+        </div>
+        <div class="form-group">
+          <label for="price">订单金额</label>
+          <div class="input-group">
+            <div class="input-group-addon"><i class="ti-money"></i></div>
+            <input formControlName="price" type="number" class="form-control" id="price" placeholder="Order price"> </div>
+            <!--value="{{order.price}}"-->
+        </div>
+        <div class="form-group">
+          <label for="paymentType">支付方式</label>
+          <div class="input-group">
+            <div class="input-group-addon"><i class="ti-wallet"></i></div>
+            <input formControlName="paymentType" type="text" class="form-control" id="paymentType" placeholder="Payment type"> </div>
+            <!--value="{{order.paymentType}}"-->
+        </div>
+        <div class="form-group">
+          <label for="exampleInputpwd2">支付状态</label>
+          <div class="input-group">
+            <div class="input-group-addon"><i class="ti-stats-up"></i></div>
+            <input type="text" class="form-control" id="exampleInputpwd2" placeholder="Order status" value="{{order.status}}"> </div>
+        </div>
+        <!--<div class="form-group">
+          <div class="checkbox checkbox-success">
+            <input id="checkbox1" type="checkbox">
+            <label for="checkbox1"> Remember me </label>
+          </div>
+        </div>-->
+        <button type="submit" (click)="save()" class="btn btn-success waves-effect waves-light m-r-10">保存</button>
+        <button type="submit" (click)="cancel()" class="btn btn-inverse waves-effect waves-light">取消</button>
+      </form>
+    </div>
+  </div>
+</div>

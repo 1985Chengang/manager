@@ -1,0 +1,25 @@
+<div class="navbar-default sidebar" role="navigation">
+  <div class="sidebar-nav slimscrollsidebar">
+    <div class="sidebar-head">
+      <h3><span class="fa-fw open-close"><i class="ti-menu hidden-xs"></i><i class="ti-close visible-xs"></i></span> <span class="hide-menu">导航</span></h3> </div>
+    <ul class="nav" id="side-menu">
+
+      <li *ngFor=" let menu of menus; index as i" [class.user-pro]="i==0">
+        <a href="javascript:;" (click)="nav(menu)" class="waves-effect" [class.active]="currentMenuId == menu.id">
+          <img *ngIf="menu.id == 1" src="assets/plugins/images/users/varun.jpg" alt="user-img" class="img-circle">
+          <i *ngIf = "menu.id != 1" class="mdi {{menu.icon}} fa-fw" data-icon="v"></i>
+          <span class="hide-menu"> {{menu.name}}<span class="fa arrow"></span>
+            <span class="label label-rouded label-inverse pull-right">{{menu.submenuaccount}}</span>
+          </span>
+        </a>
+        <ul class="nav nav-second-level">
+          <li *ngFor="let subMenu of menu.subMenu">
+            <a href="javascript:;"><i class=" fa-fw">{{subMenu.abbr}}</i><span class="hide-menu">{{subMenu.name}}</span></a>
+          </li>
+        </ul>
+      </li>
+
+
+    </ul>
+  </div>
+</div>

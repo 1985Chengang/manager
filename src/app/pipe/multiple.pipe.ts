@@ -1,0 +1,17 @@
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'multiple'
+})
+export class MultiplePipe implements PipeTransform {
+
+  /*value input original value*/
+  /*args 可选参数*/
+  transform(value: number, args?: number): any {
+    if ( !args ) {
+      args = 1;
+    }
+    return value * args;
+  }
+
+}
